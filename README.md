@@ -23,11 +23,11 @@ It is not a prompt library. It is a small, guardrailed workflow system: verify f
 
 | Skill | Use it when | What you get |
 |---|---|---|
-| [signal-verified-outreach](.claude/skills/signal-verified-outreach/SKILL.md) | "Write outreach to X" | A short message built on a trigger checked against its primary source, sent to the person who owns the problem |
-| [discovery-call-prep](.claude/skills/discovery-call-prep/SKILL.md) | "Prep me for my call with X" | A one-page control panel: evidence-linked hypotheses, prioritised questions, objections, MEDDICC gaps |
-| [objection-handler](.claude/skills/objection-handler/SKILL.md) | "They said it's too expensive" | What's behind it, a clarifying question, spoken and written responses, and when the honest answer is "not a fit" |
-| [call-to-crm](.claude/skills/call-to-crm/SKILL.md) | "Log this call" + transcript | CRM update, MEDDICC, AE handoff and follow-up, every line tagged Said / Interpreted / Unknown |
-| [sales-router](.claude/skills/sales-router/SKILL.md) | "What's next with X?" | Routes to the right skill and reuses verified context across the deal |
+| [signal-verified-outreach](skills/signal-verified-outreach/SKILL.md) | "Write outreach to X" | A short message built on a trigger checked against its primary source, sent to the person who owns the problem |
+| [discovery-call-prep](skills/discovery-call-prep/SKILL.md) | "Prep me for my call with X" | A one-page control panel: evidence-linked hypotheses, prioritised questions, objections, MEDDICC gaps |
+| [objection-handler](skills/objection-handler/SKILL.md) | "They said it's too expensive" | What's behind it, a clarifying question, spoken and written responses, and when the honest answer is "not a fit" |
+| [call-to-crm](skills/call-to-crm/SKILL.md) | "Log this call" + transcript | CRM update, MEDDICC, AE handoff and follow-up, every line tagged Said / Interpreted / Unknown |
+| [sales-router](skills/sales-router/SKILL.md) | "What's next with X?" | Routes to the right skill and reuses verified context across the deal |
 
 ## Try it in 60 seconds
 
@@ -35,15 +35,15 @@ It is not a prompt library. It is a small, guardrailed workflow system: verify f
 ```bash
 git clone https://github.com/marichalnick/sales-skills-for-claude
 cd sales-skills-for-claude
-claude
-> prep me for a discovery call with a fictional insurer that just posted an AI Governance Lead job
 ```
-Skills in `.claude/skills/` are picked up when you run Claude Code in this folder. To use them everywhere, copy them to your personal skills folder:
+Then make the skills available to Claude Code, either for this project or everywhere:
 ```bash
-cp -R .claude/skills/* ~/.claude/skills/
+mkdir -p .claude && cp -R skills .claude/       # this project only
+cp -R skills/* ~/.claude/skills/                # all your projects
 ```
+Start `claude` and ask: *"Prep me for a discovery call with a fictional insurer that just posted an AI Governance Lead job."*
 
-**Claude.ai / desktop:** zip one skill folder (for example `.claude/skills/discovery-call-prep`) and upload it under *Settings → Capabilities → Skills*.
+**Claude.ai / desktop:** zip one skill folder (for example `skills/discovery-call-prep`) and upload it under *Settings → Capabilities → Skills*.
 
 *Install paths and menus can change. If a step doesn't match, check the [Claude docs on skills](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview).*
 
