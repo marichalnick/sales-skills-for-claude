@@ -1,0 +1,7 @@
+.env
+.env.*
+transcripts/
+crm_exports/
+accounts/private/
+ACCOUNT-*.md
+PREP-*.md
